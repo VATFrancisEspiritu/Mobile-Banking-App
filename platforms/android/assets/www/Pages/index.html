@@ -6,13 +6,13 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- JS dependencies (order matters!) -->
-  <script src="scripts/js/platformOverrides.js"></script>
-  <script src="lib/onsen/js/onsenui.js"></script>
+  <script src="../scripts/js/platformOverrides.js"></script>
+  <script src="../lib/onsen/js/onsenui.js"></script>
 
   <!-- CSS dependencies -->
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
-  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+  <link rel="stylesheet" href="../lib/onsen/css/onsenui.css" />
+  <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components.css" />
+  <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
 
   <title>Onsen UI</title>
 
@@ -21,29 +21,19 @@
 <body>
   <!-- Cordova reference -->
   <script src="cordova.js"></script>
-  <script src="scripts/js/index.js"></script>
+  <script src="../scripts/js/index.js"></script>
   <!-- -->
     
-    <ons-page sliding-menu-ignore="true">
-
-        <ons-toolbar>
-            <div class="left">
-            </div>
-            <div class="center">App2Gest - Login</div>
-        </ons-toolbar>
-
-        <div class="main-image-wrapper">
-            <i class="fa fa-sign-in main-image"></i>
-        </div>
-        <form>
-            <input type="email" class="text-input--underbar" placeholder="Username" value="">
-            <input type="password" class="text-input--underbar" placeholder="Password" value="">
-            <br>
-            <button class="button login-button">Log in</button>
-            <br>
-        </form>
-
-    </ons-page>
+    <ons-navigator id="myNavigator" page="page1.html"></ons-navigator>
+    <ons-template id="page1.html">
+        <ons-page id="page1">
+            <ons-toolbar>
+                <div class="center">Page 1</div>
+            </ons-toolbar>
+            <p>This is the first page.</p>
+            <ons-button id="push-button">Push page</ons-button>
+        </ons-page>
+    </ons-template>
 
 </body>
 </html>
