@@ -30,9 +30,45 @@
             <ons-toolbar>
                 <div class="center">Page 1</div>
             </ons-toolbar>
-            <p>This is the first page.</p>
-            <ons-button id="push-button">Push page</ons-button>
+            <p>Dummy login page</p>
+            <ons-button id="push-button">Proceed to registration</ons-button>
             <ons-button id="registrationValidationPush-button">Registration Validation</ons-button>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="registration.html">
+        <ons-page id="registration">
+            <ons-toolbar>
+                <div class="left"><ons-back-button>Back</ons-back-button></div>
+                <div class="center">Registration</div>
+            </ons-toolbar>
+            <div style="text-align: center; margin-top: 10px;">
+                <p>
+                    <ons-input id="ccnumber" modifier="underbar" placeholder="Credit Card or Agreement Number" float></ons-input>
+                </p><p>
+                    <ons-input id="fullname" modifier="underbar" placeholder="Full Name" float></ons-input>
+                </p><p>
+                    <ons-input id="password" placeholder="Password" type="password" float></ons-input>
+                </p><p>
+                    <ons-input id="repassword" placeholder="Confirm Password" type="password" float></ons-input>
+                </p><p>
+                    <ons-input id="birthdate" modifier="underbar" type="date" float></ons-input>
+                </p><p>
+                    <ons-input id="email" placeholder="Email Address" type="email" float></ons-input>
+                </p><p>
+                    <ons-input id="reemail" placeholder="Confirm Email Address" type="email" float></ons-input>
+                </p><p>
+                     <ons-button id="cancelButton">Cancel</ons-button>
+                    <ons-button id="registerButton">Register</ons-button>
+                </p>
+            </div>
+
+            <ons-modal id="modal">
+                <p>Registration Complete!</p>
+                <p>Please check your email address for the One-Time Password.</p>
+                <ons-button id="closeButton">Close</ons-button>
+            </ons-modal>
+>>>>>>> d96e4c53ce5f2ab9c8511cbe35fa357c9fd8fe0e
         </ons-page>
     </ons-template>
 

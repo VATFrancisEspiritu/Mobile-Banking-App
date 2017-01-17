@@ -10,7 +10,7 @@
 
         if (page.id === 'page1') {
             page.querySelector('#push-button').onclick = function () {
-                document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Page 2' } });
+                document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } });
             };
             page.querySelector('#registrationValidationPush-button').onclick = function () {
                 document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Page 3' } });
@@ -20,6 +20,18 @@
         } else if (page.id === 'registrationValidation') {
             page.querySelector('ons-toolbar .center').innterHTML = page.data.title;
         }
+
+        page.querySelector('#cancelButton').onclick = function () {
+            document.querySelector('#myNavigator').popPage();
+        };
+
+        page.querySelector('#registerButton').onclick = function () {
+            page.querySelector('#modal').show();
+        };
+
+        page.querySelector('#closeButton').onclick = function () {
+            page.querySelector('#modal').hide();
+        };
     });
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
