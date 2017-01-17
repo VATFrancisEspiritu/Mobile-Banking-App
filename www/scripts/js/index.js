@@ -12,8 +12,13 @@
             page.querySelector('#push-button').onclick = function () {
                 document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Page 2' } });
             };
+            page.querySelector('#registrationValidationPush-button').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Page 3' } });
+            };
         } else if (page.id === 'registration') {
             page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+        } else if (page.id === 'registrationValidation') {
+            page.querySelector('ons-toolbar .center').innterHTML = page.data.title;
         }
     });
 
