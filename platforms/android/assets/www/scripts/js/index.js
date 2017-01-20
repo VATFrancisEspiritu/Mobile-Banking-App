@@ -10,6 +10,7 @@
 
         if (page.id === 'page1') {
             page.querySelector('#push-button').onclick = function () {
+                tryThis();
                 document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } });
             };
             page.querySelector('#registrationValidationPush-button').onclick = function () {
@@ -35,6 +36,17 @@
     });
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+    function tryThis() {
+        $.get("http://192.168.100.31:8080/greeting",
+        function (json) {
+            alert(JSON.stringify(json));
+            if (json == null || json == 'undefined')
+                alert("Insert failed");
+            else
+                alert("Insert successful");
+        });
+    }
 
     function onDeviceReady() {
         // Handle the Cordova pause and resume events

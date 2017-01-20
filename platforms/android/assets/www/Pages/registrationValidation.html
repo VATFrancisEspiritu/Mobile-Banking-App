@@ -19,9 +19,34 @@
 <body>
     <!-- Cordova reference -->
     <script src="cordova.js"></script>
-    <script src="../scripts/js/index.js"></script>
+    <script src="../scripts/js/registrationValidation.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+
     <!-- -->
     <ons-navigator id="myNavigator" page="registrationValidation.html"></ons-navigator>
+
+    <ons-template id="dialog.html">
+        <ons-dialog var="dialog" cancelable>
+
+            <ons-toolbar inline>
+                <div class="center">
+                    Hello!
+                </div>
+            </ons-toolbar>
+
+            <div style="text-align: center">
+                <p>
+                    This is a dialog with some custom content.
+                </p>
+
+                <p>
+                    <ons-button ng-click="dialog.hide()">Close</ons-button>
+                </p>
+            </div>
+
+        </ons-dialog>
+    </ons-template>
+
     <ons-template id="registrationValidation.html">
         <ons-page id="registrationValidation">
             <ons-toolbar>
@@ -34,11 +59,16 @@
             </div>
 
             <div class="right">
-                <ons-button>Cancel</ons-button>
-                <ons-button>Validate</ons-button>
+                <ons-button id="add-button">Add</ons-button>
+                <ons-button id="edit-button">Edit</ons-button>
+                <ons-button id="delete-button">Delete</ons-button>
             </div>
+            <ons-modal id="modal-add">
+                <p>Registration Complete!</p>
+                <p>Please check your email address for the One-Time Password.</p>
+                <ons-button id="closeButton">Close</ons-button>
+            </ons-modal>
         </ons-page>
     </ons-template>
-
 </body>
 </html>
