@@ -8,34 +8,45 @@
     document.addEventListener('init', function (event) {
         var page = event.target;
 
-        if (page.id === 'page1') {
-            page.querySelector('#push-button').onclick = function () {
-                tryThis();
-                document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } });
-            };
-            page.querySelector('#registrationValidationPush-button').onclick = function () {
-                document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Page 3' } });
-            };
-        } else if (page.id === 'registration') {
+        if (page.id === 'registration') {
             page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
         } else if (page.id === 'registrationValidation') {
             page.querySelector('ons-toolbar .center').innterHTML = page.data.title;
         }
 
-        page.querySelector('#cancelButton').onclick = function () {
-            document.querySelector('#myNavigator').popPage();
+        document.querySelector('#proceedToRegisterButton').onclick = function () {
+            document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } }).then(function () { });
         };
 
-        page.querySelector('#registerButton').onclick = function () {
-            page.querySelector('#modal').show();
+        document.querySelector('#proceedToRegisterValidationButton').onclick = function () {
+            document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Registration Validation' } }).then(function () { });
         };
 
-        page.querySelector('#closeButton').onclick = function () {
-            page.querySelector('#modal').hide();
+        document.querySelector('#cancelButton').onclick = function () {
+            document.querySelector('#myNavigator').popPage().then(function () { });
         };
+
+        document.querySelector('#registerButton').onclick = function () {
+            insertToDB();
+            document.querySelector('#modal').show();
+        };
+        
+        document.querySelector('#closeButton').onclick = function () {
+            document.querySelector('#modal').hide();
+        };
+
+
     });
 
-    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+    document.addEventListener("deviceready", function () {
+        db = window.sqlitePlugin.openDatabase({ name: "userdetails.db" });
+        db.transaction(function (tx) {
+            alert("execute");
+            tx.executeSql("CREATE TABLE IF NOT EXISTS userdetails (ccnumber text primary key, fullname text, password text, birthdate text, email text, isvalidated text)");
+        }, function (err) {
+            alert("An error occurred while initializing the app");
+        });
+    }, false);
 
     function tryThis() {
         $.get("http://192.168.100.31:8080/greeting",
@@ -63,4 +74,25 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
-} )();
+
+    function insertToDB() {
+        var ccnumber = $('#ccnumber').val();
+        var fullname = $('#fullname').val();
+        var password = $('#password').val();
+        var birthdate = $('#birthdate').val();
+        var mobilenumber = $('#mobilenumber').val();
+        var email = $('#email').val();
+        var url = "http://localhost:8080/registerUser?" + "pEMail=" + email + "&pFullname=" + fullname + "&pCCNumber=" + ccnumber + "&pMobileNumber=" + mobilenumber + "&pPassword=" + password + "&pBirthdate=" + birthdate;
+        alert(url);
+        $.post(url,
+        function (json) {
+            if (json == null || json == 'undefined') {
+                alert("Insert failed");
+            } else {
+                alert("Insert successful");
+            }
+        });
+        return false;
+    }
+
+})();

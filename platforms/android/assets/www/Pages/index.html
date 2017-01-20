@@ -6,6 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- JS dependencies (order matters!) -->
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="../scripts/js/platformOverrides.js"></script>
   <script src="../lib/onsen/js/onsenui.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -27,14 +28,15 @@
   <!-- -->
     
     <ons-navigator id="myNavigator" page="page1.html"></ons-navigator>
+
     <ons-template id="page1.html">
         <ons-page id="page1">
             <ons-toolbar>
                 <div class="center">Page 1</div>
             </ons-toolbar>
             <p>Dummy login page</p>
-            <ons-button id="push-button">Proceed to registration</ons-button>
-            <ons-button id="registrationValidationPush-button">Registration Validation</ons-button>
+            <ons-button id="proceedToRegisterButton">Proceed to registration</ons-button>
+            <ons-button id="proceedToRegisterValidationButton">Registration Validation</ons-button>
         </ons-page>
     </ons-template>
 
@@ -60,6 +62,8 @@
                 </p><p>
                     <ons-input id="reemail" placeholder="Confirm Email Address" type="email" float></ons-input>
                 </p><p>
+                    <ons-input id="mobilenumber" placeholder="Mobile Number"float></ons-input>
+                </p><p>
                      <ons-button id="cancelButton">Cancel</ons-button>
                     <ons-button id="registerButton">Register</ons-button>
                 </p>
@@ -70,6 +74,24 @@
                 <p>Please check your email address for the One-Time Password.</p>
                 <ons-button id="closeButton">Close</ons-button>
             </ons-modal>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="registrationValidation.html">
+        <ons-page id="registrationValidation">
+            <ons-toolbar>
+                <div class="center">Registration Validation</div>
+                <div class="left"><ons-back-button>Back</ons-back-button></div>
+            </ons-toolbar>
+            <p>A One-Time Password has been sent to your email address. Please enter the 6-digit OTP below and click "Validate".</p>
+            <div class="center">
+                <ons-input placeholder="Enter 6-Digit OTP"> </ons-input>
+            </div>
+
+            <div class="right">
+                <ons-button>Cancel</ons-button>
+                <ons-button>Validate</ons-button>
+            </div>
         </ons-page>
     </ons-template>
 
