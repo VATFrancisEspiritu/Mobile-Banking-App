@@ -34,7 +34,47 @@
             document.querySelector('#modal').hide();
         };
 
+        document.querySelector('#ccnumber').onblur = function () {
+            var ccnumberInput = $('#ccnumber').val();
+            var ccnumberError = "";
+            if ( "" == ccnumberInput || null == ccnumberInput){
+                ccnumberError = "Please input your Credit Card or Agreement Number."
+            }
+            document.querySelector('#ccnumberErrorLabel').style.display = "inline";
+            document.querySelector('#ccnumberErrorLabel').innerText = ccnumberError;
+        };
 
+        document.querySelector('#fullname').onblur = function () {
+            var fullnameInput = $('#fullname').val();
+            var fullnameError = "";
+            if ("" == fullnameInput || null == fullnameInput) {
+                fullnameError = "Please input your Full Name."
+            }
+            document.querySelector('#fullnameErrorLabel').style.display = "inline";
+            document.querySelector('#fullnameErrorLabel').innerText = fullnameError;
+        };
+
+        document.querySelector('#password').onblur = function () {
+            var passwordInput = $('#password').val();
+            var passwordError = "";
+            if ("" == passwordInput || null == passwordInput) {
+                passwordError = "Please input your Password."
+            }
+            document.querySelector('#passwordErrorLabel').style.display = "inline";
+            document.querySelector('#passwordErrorLabel').innerText = passwordError;
+        };
+
+        document.querySelector('#repassword').onblur = function () {
+            var repasswordInput = $('#repassword').val();
+            var passwordInput = $('#password').val();
+            var repasswordError = "";
+            if (repasswordInput != passwordInput) {
+                repasswordError = "Inputted Passwords do not match."
+            }
+            document.querySelector('#repasswordErrorLabel').style.display = "inline";
+            document.querySelector('#repasswordErrorLabel').innerText = repasswordError;
+        };
+        
     });
 
     function onDeviceReady() {

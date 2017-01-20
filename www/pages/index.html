@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../lib/onsen/css/onsenui.css" />
   <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components.css" />
   <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+    <link rel="stylesheet" href="../scripts/css/registration.css" />
 
 
   <title>Onsen UI</title>
@@ -49,12 +50,16 @@
             <div style="text-align: center; margin-top: 30px">
                 <p>
                     <ons-input id="ccnumber" modifier="underbar" placeholder="Credit Card or Agreement Number" style="width:80%" float></ons-input>
+                    <br /><ons-label id="ccnumberErrorLabel" style="width:80%;color:red;display:none;font-size:small">An error has occured.</ons-label>
                 </p><p>
                     <ons-input id="fullname" modifier="underbar" placeholder="Full Name" style="width:80%" float></ons-input>
+                    <br /><ons-label id="fullnameErrorLabel" style="width:80%;color:red;display:none;font-size:small">An error has occured.</ons-label>
                 </p><p>
                     <ons-input id="password" placeholder="Password" type="password" style="width:80%" float></ons-input>
+                    <br /><ons-label id="passwordErrorLabel" style="width:80%;color:red;display:none;font-size:small">An error has occured.</ons-label>
                 </p><p>
                     <ons-input id="repassword" placeholder="Confirm Password" type="password" style="width:80%" float></ons-input>
+                    <br /><ons-label id="repasswordErrorLabel" style="width:80%;color:red;display:none;font-size:small">An error has occured.</ons-label>
                 </p><p>
                     <ons-input id="birthdate" modifier="underbar" type="date" style="width:80%" float></ons-input>
                 </p><p>
@@ -63,6 +68,8 @@
                     <ons-input id="reemail" placeholder="Confirm Email Address" type="email" style="width:80%" float></ons-input>
                 </p><p>
                     <ons-input id="mobilenumber" placeholder="Mobile Number" style="width:80%" float></ons-input>
+                </p><p>
+                    <ons-label style="width:80%;font-size:small;color:red">*All fields are mandatory.</ons-label>
                 </p>
             </div>
             <div style="text-align: center"><p>
