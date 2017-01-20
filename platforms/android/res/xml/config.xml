@@ -3,19 +3,19 @@
     <name>Test_Mobile_Project</name>
     <description>Test_Mobile_Project project to create fancy user interfaces for hybrid mobile applications. It uses uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
     <author email="dev@onsen.io" href="http://onsen.io">Onsen UI Team </author>
-    <content src="index.html" />
+    <content src="pages/index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <vs:features />
+    <preference name="ErrorUrl" value="" />
     <preference name="windows-target-version" value="8.1" />
     <preference name="windows-phone-target-version" value="8.1" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="default" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTop" />
-    <preference name="ErrorUrl" value="" />
     <preference name="Fullscreen" value="false" />
     <preference name="KeepRunning" value="true" />
     <preference name="SplashScreen" value="screen" />
