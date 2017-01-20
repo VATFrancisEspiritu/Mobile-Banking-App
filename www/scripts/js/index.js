@@ -28,9 +28,8 @@
 
         document.querySelector('#registerButton').onclick = function () {
             insertToDB();
-            document.querySelector('#modal').show();
         };
-        
+
         document.querySelector('#closeButton').onclick = function () {
             document.querySelector('#modal').hide();
         };
@@ -38,20 +37,10 @@
 
     });
 
-    document.addEventListener("deviceready", function () {
-        db = window.sqlitePlugin.openDatabase({ name: "userdetails.db" });
-        db.transaction(function (tx) {
-            alert("execute");
-            tx.executeSql("CREATE TABLE IF NOT EXISTS userdetails (ccnumber text primary key, fullname text, password text, birthdate text, email text, isvalidated text)");
-        }, function (err) {
-            alert("An error occurred while initializing the app");
-        });
-    }, false);
-
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
+        document.addEventListener('pause', onPause.bind(this), false);
+        document.addEventListener('resume', onResume.bind(this), false);
 
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
@@ -72,13 +61,12 @@
         var mobilenumber = $('#mobilenumber').val();
         var email = $('#email').val();
         var url = "http://localhost:8080/registerUser?" + "pEMail=" + email + "&pFullname=" + fullname + "&pCCNumber=" + ccnumber + "&pMobileNumber=" + mobilenumber + "&pPassword=" + password + "&pBirthdate=" + birthdate;
-        alert(url);
         $.post(url,
-        function (json) {
-            if (json == null || json == 'undefined') {
+        function (response) {
+            if (response == null || response == 'undefined') {
                 alert("Insert failed");
             } else {
-                alert("Insert successful");
+                document.querySelector('#modal').show();
             }
         });
         return false;

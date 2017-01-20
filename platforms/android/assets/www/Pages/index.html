@@ -44,35 +44,36 @@
                 <div class="left"><ons-back-button>Back</ons-back-button></div>
                 <div class="center">Registration</div>
             </ons-toolbar>
-            <div style="text-align: center; margin-top: 10px;">
+            <div style="text-align: center; margin-top: 30px">
                 <p>
-                    <ons-input id="ccnumber" modifier="underbar" placeholder="Credit Card or Agreement Number" float></ons-input>
+                    <ons-input id="ccnumber" modifier="underbar" placeholder="Credit Card or Agreement Number" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="fullname" modifier="underbar" placeholder="Full Name" float></ons-input>
+                    <ons-input id="fullname" modifier="underbar" placeholder="Full Name" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="password" placeholder="Password" type="password" float></ons-input>
+                    <ons-input id="password" placeholder="Password" type="password" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="repassword" placeholder="Confirm Password" type="password" float></ons-input>
+                    <ons-input id="repassword" placeholder="Confirm Password" type="password" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="birthdate" modifier="underbar" type="date" float></ons-input>
+                    <ons-input id="birthdate" modifier="underbar" type="date" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="email" placeholder="Email Address" type="email" float></ons-input>
+                    <ons-input id="email" placeholder="Email Address" type="email" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="reemail" placeholder="Confirm Email Address" type="email" float></ons-input>
+                    <ons-input id="reemail" placeholder="Confirm Email Address" type="email" style="width:80%" float></ons-input>
                 </p><p>
-                    <ons-input id="mobilenumber" placeholder="Mobile Number"float></ons-input>
-                </p><p>
-                     <ons-button id="cancelButton">Cancel</ons-button>
-                    <ons-button id="registerButton">Register</ons-button>
+                    <ons-input id="mobilenumber" placeholder="Mobile Number" style="width:80%" float></ons-input>
                 </p>
             </div>
+            <div style="text-align: center"><p>
+                <ons-button id="cancelButton">Cancel</ons-button>
+                <ons-button id="registerButton">Register</ons-button>
+            </p></div>
 
             <ons-modal id="modal">
                 <p>Registration Complete!</p>
                 <p>Please check your email address for the One-Time Password.</p>
                 <ons-button id="closeButton">Close</ons-button>
             </ons-modal>
-        </ons-page>
+</ons-page>
     </ons-template>
 
     <ons-template id="registrationValidation.html">
