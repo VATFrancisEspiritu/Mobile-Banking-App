@@ -81,6 +81,37 @@
             document.querySelector('#repasswordErrorLabel').style.display = "inline";
             document.querySelector('#repasswordErrorLabel').innerText = repasswordError;
         };
+
+        document.querySelector('#email').onblur = function () {
+            var emailInput = $('#email').val();
+            var emailError = "";
+            if ("" == emailInput || null == emailInput) {
+                emailError = "Please input your Email."
+            }
+            document.querySelector('#emailErrorLabel').style.display = "inline";
+            document.querySelector('#emailErrorLabel').innerText = emailError;
+        };
+
+        document.querySelector('#reemail').onblur = function () {
+            var reemailInput = $('#reemail').val();
+            var emailInput = $('#email').val();
+            var reemailError = "";
+            if (reemailInput != emailInput) {
+                reemailError = "Inputted Emails do not match."
+            }
+            document.querySelector('#reemailErrorLabel').style.display = "inline";
+            document.querySelector('#reemailErrorLabel').innerText = reemailError;
+        };
+
+        document.querySelector('#mobilenumber').onblur = function () {
+            var mobilenumberInput = $('#mobilenumber').val();
+            var mobilenumberError = "";
+            if ("" == mobilenumberInput || null == mobilenumberInput) {
+                mobilenumberError = "Please input your Email."
+            }
+            document.querySelector('#mobilenumberErrorLabel').style.display = "inline";
+            document.querySelector('#mobilenumberErrorLabel').innerText = mobilenumberError;
+        };
         
     });
 
