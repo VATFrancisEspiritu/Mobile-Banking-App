@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
+    <title>Welcome</title>
 
     <!-- JS dependencies (order matters!) -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="../scripts/js/platformOverrides.js"></script>
     <script src="../lib/onsen/js/onsenui.js"></script>
 
@@ -13,21 +15,18 @@
     <link rel="stylesheet" href="../lib/onsen/css/onsenui.css" />
     <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components.css" />
     <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
-
-    <title>Registration Page</title>
 </head>
-<body>    <!-- Cordova reference -->
+<body>
+
+    <!-- Cordova reference -->
     <script src="cordova.js"></script>
-    <script src="../scripts/js/index.js"></script>
-    <!-- -->
-    <ons-navigator id="myNavigator" page="registration.html"></ons-navigator>
-    <ons-template id="registration.html">
-        <ons-page id="registration">
-            <ons-toolbar>
-                <div class="left"><ons-back-button>Back</ons-back-button></div>
-                <div class="center"></div>
-            </ons-toolbar>
-            <p>This is the second page.</p>
+    <script src="../scripts/js/welcome.js"></script>
+
+    <ons-navigator id="myNavigator" page="welcome.html"></ons-navigator>
+    <ons-template id="welcome.html">
+        <ons-page id="welcome">
+            <div>Login Successful</div>
+            <ons-button id="back-button">Back</ons-button>
         </ons-page>
     </ons-template>
 

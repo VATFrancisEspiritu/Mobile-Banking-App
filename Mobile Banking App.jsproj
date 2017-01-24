@@ -67,6 +67,10 @@
       <Platform>Windows Phone (Universal)</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\pages\page.html" />
+    <Content Include="www\pages\page1.html" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>edd79a81-038e-4b00-becb-bc1b75f19337</ProjectGuid>
   </PropertyGroup>
@@ -75,7 +79,7 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <DefaultReferenceGroup>Implicit (Apache Cordova)</DefaultReferenceGroup>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">

@@ -8,30 +8,22 @@
     document.addEventListener('init', function (event) {
         var page = event.target;
 
-        if (page.id === 'page1') {
-            page.querySelector('#push-button').onclick = function () {
+        if (page.id === 'login') {
+            document.querySelector('#signup-link').onclick = function () {
                 document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } });
             };
-            page.querySelector('#registrationValidationPush-button').onclick = function () {
-                document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Page 3' } });
+            document.querySelector('#login-button').onclick = function () {
+                login();
             };
         } else if (page.id === 'registration') {
             page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
         } else if (page.id === 'registrationValidation') {
             page.querySelector('ons-toolbar .center').innterHTML = page.data.title;
+        } else if (page.id === 'welcome') {
+            document.querySelector('#back-button').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('login.html', { data: { title: 'LogIn' } });
+            };
         }
-
-        page.querySelector('#cancelButton').onclick = function () {
-            document.querySelector('#myNavigator').popPage();
-        };
-
-        page.querySelector('#registerButton').onclick = function () {
-            page.querySelector('#modal').show();
-        };
-
-        page.querySelector('#closeButton').onclick = function () {
-            page.querySelector('#modal').hide();
-        };
     });
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
@@ -42,13 +34,38 @@
         document.addEventListener( 'resume', onResume.bind( this ), false );
 
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-    };
+    }
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
-    };
+    }
 
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
-    };
+    }
+
+    function login() {
+        var loginEntity = {};
+
+        loginEntity.username = $('#username').val();
+        loginEntity.password = $('#password').val();
+
+        $.ajax({
+            url: "http://localhost:8080/login",
+            type: "POST",
+            contentType: "application/json",
+            dataType: 'json',
+            data: JSON.stringify(loginEntity),
+            timeout: 10000,
+            complete: function (xhttpResponse) {
+                if (xhttpResponse.responseJSON) {
+                    alert("Login successful. Congratulations!");
+                    document.querySelector('#myNavigator').pushPage('welcome.html', { data: { title: 'Welcome' } });
+                } else {
+                    alert("Login failed. Please recheck your username/password.");
+                }
+            }
+        });
+    }
+
 } )();

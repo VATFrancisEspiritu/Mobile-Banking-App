@@ -1,0 +1,12 @@
+﻿.non-toolbar-header-area {
+    margin-bottom: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 5%;
+}
+
+.non-toolbar-header-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+}
