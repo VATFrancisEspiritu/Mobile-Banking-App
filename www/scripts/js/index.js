@@ -21,14 +21,6 @@
             };
         }
 
-        document.querySelector('#proceedToRegisterButton').onclick = function () {
-            document.querySelector('#myNavigator').pushPage('registration.html', { data: { title: 'Registration' } }).then(function () { });
-        };
-
-        document.querySelector('#proceedToRegisterValidationButton').onclick = function () {
-            document.querySelector('#myNavigator').pushPage('registrationValidation.html', { data: { title: 'Registration Validation' } }).then(function () { });
-        };
-
         document.querySelector('#cancelButton').onclick = function () {
             document.querySelector('#myNavigator').popPage().then(function () { });
         };
@@ -61,8 +53,8 @@
             document.querySelector('#fullnameErrorLabel').innerText = fullnameError;
         };
 
-        document.querySelector('#password').onblur = function () {
-            var passwordInput = $('#password').val();
+        document.querySelector('#passwordField').onblur = function () {
+            var passwordInput = $('#passwordField').val();
             var passwordError = "";
             if ("" == passwordInput || null == passwordInput) {
                 passwordError = "Please input your Password."
@@ -73,7 +65,7 @@
 
         document.querySelector('#repassword').onblur = function () {
             var repasswordInput = $('#repassword').val();
-            var passwordInput = $('#password').val();
+            var passwordInput = $('#passwordField').val();
             var repasswordError = "";
             if (repasswordInput != passwordInput) {
                 repasswordError = "Inputted Passwords do not match."
