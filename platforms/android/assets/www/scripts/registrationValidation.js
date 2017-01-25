@@ -23,6 +23,8 @@
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
+
+
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
         document.addEventListener('pause', onPause.bind(this), false);

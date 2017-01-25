@@ -1,0 +1,47 @@
+﻿<script src="../scripts/js/registration.js"></script>
+<ons-page id="registration">
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center"></div>
+    </ons-toolbar>
+    <div class="forms">
+        <p>
+            <ons-input id="ccnumber" modifier="underbar" placeholder="Credit Card or Agreement Number" class="field-width" float></ons-input>
+            <br /><ons-label id="ccnumberErrorLabel" class="error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="fullname" modifier="underbar" placeholder="Full Name" class="field-width" float></ons-input>
+            <br /><ons-label id="fullnameErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="passwordField" placeholder="Password" type="password" class="field-width" float></ons-input>
+            <br /><ons-label id="passwordErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="repassword" placeholder="Confirm Password" type="password" class="field-width" float></ons-input>
+            <br /><ons-label id="repasswordErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="birthdate" modifier="underbar" type="date" class="field-width" float></ons-input>
+        </p><p>
+            <ons-input id="email" placeholder="Email Address" type="email" class="field-width" float></ons-input>
+            <br /><ons-label id="emailErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="reemail" placeholder="Confirm Email Address" type="email" class="field-width" float></ons-input>
+            <br /><ons-label id="reemailErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-input id="mobilenumber" placeholder="Mobile Number" class="field-width" float></ons-input>
+            <br /><ons-label id="mobilenumberErrorLabel" class="field-width error-message">An error has occured.</ons-label>
+        </p><p>
+            <ons-label class="mandatory-label">*All fields are mandatory.</ons-label>
+        </p>
+    </div>
+    <div style="text-align: center">
+        <p>
+            <ons-button id="cancelButton">Cancel</ons-button>
+            <ons-button id="registerButton">Register</ons-button>
+        </p>
+    </div>
+
+    <ons-modal id="modal">
+        <p>Registration Complete!</p>
+        <p>Please check your email address for the One-Time Password.</p>
+        <ons-button id="closeButton">Close</ons-button>
+    </ons-modal>
+</ons-page>

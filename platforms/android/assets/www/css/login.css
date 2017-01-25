@@ -10,3 +10,42 @@
     vertical-align: middle;
     margin: auto;
 }
+
+.image {
+    display:block;
+    vertical-align:middle;
+    width:50px;
+    height:auto;
+    float:left;
+    margin:5px;
+}
+
+.header-text {
+    margin:0;
+    font-size:1.2rem;
+}
+
+.login-area {
+    margin-bottom: 10%;
+    margin-top: 15%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.links-area {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.links {
+    margin:0;
+    font-size: 14px;
+}

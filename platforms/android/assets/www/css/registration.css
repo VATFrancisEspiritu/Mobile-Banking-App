@@ -1,0 +1,19 @@
+﻿.forms {
+    text-align: center;
+    margin-top: 30px
+}
+
+.error-message {
+    color:red;
+    display:none;
+    font-size:small;
+}
+
+.mandatory-label {
+    color:red;
+    font-size:small;
+}
+
+.field-width {
+    width:80%
+}

@@ -99,7 +99,7 @@
             var mobilenumberInput = $('#mobilenumber').val();
             var mobilenumberError = "";
             if ("" == mobilenumberInput || null == mobilenumberInput) {
-                mobilenumberError = "Please input your Email."
+                mobilenumberError = "Please input your Mobile Number."
             }
             document.querySelector('#mobilenumberErrorLabel').style.display = "inline";
             document.querySelector('#mobilenumberErrorLabel').innerText = mobilenumberError;
