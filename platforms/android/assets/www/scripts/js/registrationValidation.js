@@ -7,18 +7,15 @@
 
     document.addEventListener('init', function (event) {
         var page = event.target;
-
-            page.querySelector('#add-button').onclick = function () {
-                page.querySelector('#modal-add').show();
+        if (page.id === 'registrationValidation') {
+            document.querySelector('#cancelButton').onclick = function () {
+                document.querySelector('#myNavigator').resetToPage('login.html').then(function () { });
             };
 
-            page.querySelector('#edit-button').onclick = function () {
-                page.querySelector('#modal').show();
+            document.querySelector('#validateRegistrationButton').onclick = function () {
+                validateOTP(page.data.email);
             };
-
-            page.querySelector('#delete-button').onclick = function () {
-                page.querySelector('#modal').show();
-            };
+        }
     });
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
@@ -38,4 +35,20 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
+
+    function validateOTP(email) {
+        alert(email);
+        var inputOTP = $('#inputOTP').val();
+        var url = "http://192.168.100.16:8080/validateOTP?" + "pEmail=" + email + "&pInputOTP=" + inputOTP;
+        $.get(url,
+        function (response) {
+            if (response == null || response == 'undefined') {
+                alert("OTP Failed!");
+            } else {
+                alert("Account validated. Redirecting to login page...");
+                document.querySelector('#myNavigator').resetToPage('login.html').then(function () { });
+            }
+        });
+        return false;
+    }
 })();

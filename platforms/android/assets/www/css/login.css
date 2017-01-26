@@ -11,41 +11,56 @@
     margin: auto;
 }
 
-.image {
-    display:block;
-    vertical-align:middle;
-    width:50px;
-    height:auto;
-    float:left;
-    margin:5px;
+.header {
+    margin: 0;
 }
 
-.header-text {
-    margin:0;
-    font-size:1.2rem;
+.main-header {
+    font-size: 1.2rem;
+}
+
+.sub-header {
+    font-size: 1.1rem;
 }
 
 .login-area {
-    margin-bottom: 10%;
-    margin-top: 15%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 10% 2.5% 5% 5%;
 }
 
-.center {
+.login-group {
     text-align: center;
+    padding: 2.5% 0;
+    background-color: #B2B2FF;
 }
 
-.left {
+.login-entry {
+    margin: 2.5px;
+}
+
+.login-text-element {
+    width: 90%;
+    font-size: 12px;
     text-align: left;
+    padding: 15px 0%;
+    border-radius: 5px;
+}
+
+.login-button-element {
+    width: 90%;
+    font-size: 11px;
+    background-color: #b951ff;
+    color: white;
+    padding: 15px 32px;
 }
 
 .links-area {
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 0 5%;
 }
 
-.links {
-    margin:0;
-    font-size: 14px;
+.link-line {
+    margin: 3px 0;
+}
+.link-element {
+    text-decoration: none;
+    font-size: 12px;
 }

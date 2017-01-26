@@ -6,7 +6,6 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- JS dependencies (order matters!) -->
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="../scripts/js/platformOverrides.js"></script>
   <script src="../lib/onsen/js/onsenui.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -27,6 +26,8 @@
   <script src="cordova.js"></script>
   <script src="../scripts/js/login.js"></script>
   <script src="../scripts/js/registration.js"></script>
+  <script src="../scripts/js/registrationValidation.js"></script>
+  <script src="../scripts/js/welcome.js"></script>
   <!-- -->
     
     <ons-navigator id="myNavigator" page="login.html"></ons-navigator>
@@ -40,32 +41,32 @@
 
             <!--COMPANY NAME AND ICON HEADER-->
             <div class="non-toolbar-header-area">
-                <img src="../icons/happy_icon_royal_blue.png" class="image">
+                <img src="../icons/happy_icon_royal_blue.png" style="display:block; vertical-align:middle; width:50px; height:auto; float:left; margin:5px;">
                 <div class="non-toolbar-header-title">
-                    <p class="header-text"><b>ធនាគារឯកទេសក្នុងប្រទេសកម្ពុជា</b></p>
-                    <p class="header-text">English Specialized Bank</p>
+                    <p class="header main-header"><b>ធនាគារឯកទេសក្នុងប្រទេសកម្ពុជា</b></p>
+                    <p class="header sub-header">English Specialized Bank</p>
                 </div>
             </div>
             <!--COMPANY NAME AND ICON HEADER-->
             <!--LOGIN AREA-->
             <div class="login-area">
-                <div class="center">
-                    <p>
-                        <ons-input id="username" modifier="underbar" placeholder="User ID"></ons-input>
+                <div class="login-group">
+                    <p class="login-entry">
+                        <input type="text" id="username" placeholder="User ID" class="login-text-element" />
                     </p>
-                    <p>
-                        <ons-input id="password" modifier="underbar" placeholder="Password" type="password"></ons-input>
+                    <p class="login-entry">
+                        <input type="password" id="password" placeholder="Password" class="login-text-element" />
                     </p>
-                    <p>
-                        <ons-button id="login-button">LOGIN</ons-button>
+                    <p class="login-entry">
+                        <button id="login-button" class="login-button-element">Login</button>
                     </p>
                 </div>
             </div>
             <!--LOGIN AREA-->
             <!--LINKS AREA-->
             <div class="links-area">
-                <p class="links"><a id="signup-link" href="javascript:void(0);">No account yet? Sign Up Now</a></p>
-                <p class="links"><a href="javascript:void(0);">Forgot username or password?</a></p>
+                <p class="link-line"><a id="signup-link" href="javascript:void(0);" class="link-element">Not yet enrolled? Sign Up Now</a></p>
+                <p class="link-line"><a href="javascript:void(0);" class="link-element">Forgot User ID or Password?</a></p>
             </div>
             <!--LINKS AREA-->
 

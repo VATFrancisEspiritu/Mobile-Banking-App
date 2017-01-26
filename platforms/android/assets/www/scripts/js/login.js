@@ -41,7 +41,7 @@
         loginEntity.password = $('#password').val();
 
         $.ajax({
-            url: "http://localhost:8080/login",
+            url: "http://192.168.100.16:8080/login",
             type: "POST",
             contentType: "application/json",
             dataType: 'json',
@@ -49,7 +49,6 @@
             timeout: 10000,
             complete: function (xhttpResponse) {
                 if (xhttpResponse.responseJSON) {
-                    alert("Login successful. Congratulations!");
                     document.querySelector('#myNavigator').pushPage('welcome.html', { data: { title: 'Welcome' } });
                 } else {
                     alert("Login failed. Please recheck your username/password.");
