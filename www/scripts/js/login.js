@@ -41,7 +41,7 @@
         loginEntity.password = $('#password').val();
 
         $.ajax({
-            url: "http://localhost:8080/login",
+            url: "http://192.168.100.16:8080/login",
             type: "POST",
             contentType: "application/json",
             dataType: 'json',
