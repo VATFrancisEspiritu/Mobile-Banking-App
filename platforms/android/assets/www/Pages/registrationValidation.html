@@ -1,15 +1,19 @@
 ﻿<ons-page id="registrationValidation">
+    <link rel="stylesheet" href="../css/registrationValidation.css" />
     <ons-toolbar>
         <div class="center">Registration Validation</div>
         <div class="left"><ons-back-button>Back</ons-back-button></div>
     </ons-toolbar>
-    <p>A One-Time Password has been sent to your email address. Please enter the 6-digit OTP below and click "Validate".</p>
-    <div class="center">
-        <ons-input id="inputOTP" modifier="underbar" placeholder="One Time Password" style="width:80%" float></ons-input>
-    </div>
 
-    <div class="right">
-        <ons-button id="cancelButton">Cancel</ons-button>
-        <ons-button id="validateRegistrationButton">Validate</ons-button>
+    <div class="login-area">
+        <p>A One-Time Password has been sent to your email address. Please enter the 6-digit OTP below and click "Validate".</p>
+        <div class="center">
+            <ons-input id="inputOTP" modifier="underbar" placeholder="One Time Password" style="width:80%" float></ons-input>
+        </div>
+
+        <div class="right">
+            <ons-button id="cancelButton" style="background-color: #EE82EE">Cancel</ons-button>
+            <ons-button id="validateRegistrationButton" style="background-color: #EE82EE">Validate</ons-button>
+        </div>
     </div>
 </ons-page>

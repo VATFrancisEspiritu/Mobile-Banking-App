@@ -17,10 +17,12 @@
 
 .main-header {
     font-size: 1.2rem;
+    color: #551A8B;
 }
 
 .sub-header {
     font-size: 1.1rem;
+    color: #551A8B;
 }
 
 .login-area {
@@ -43,12 +45,13 @@
     text-align: left;
     padding: 15px 0%;
     border-radius: 5px;
+    background-color: #B2B2FF;
 }
 
 .login-button-element {
     width: 90%;
     font-size: 11px;
-    background-color: #b951ff;
+    background-color: #B452CD;
     color: white;
     padding: 15px 32px;
 }
