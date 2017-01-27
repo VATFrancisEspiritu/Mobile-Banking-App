@@ -67,3 +67,19 @@
     text-decoration: none;
     font-size: 12px;
 }
+
+.navigation-bar {
+    background: #551A8B;
+}
+
+#emailLogin::-webkit-input-placeholder,
+#password::-webkit-input-placeholder 
+{
+    color: white;
+}
+
+#emailLogin:-moz-placeholder,
+#password:-moz-placeholder 
+{
+    color: white;
+}

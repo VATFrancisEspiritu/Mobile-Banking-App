@@ -37,7 +37,7 @@
     function login() {
         var loginEntity = {};
 
-        loginEntity.username = $('#username').val();
+        loginEntity.username = $('#emailLogin').val();
         loginEntity.password = $('#password').val();
 
         $.ajax({

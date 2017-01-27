@@ -8,7 +8,7 @@
     document.addEventListener('init', function (event) {
         var page = event.target;
         if (page.id === 'registrationValidation') {
-            document.querySelector('#cancelButton').onclick = function () {
+            document.querySelector('#cancelValidationButton').onclick = function () {
                 document.querySelector('#myNavigator').resetToPage('login.html').then(function () { });
             };
 
